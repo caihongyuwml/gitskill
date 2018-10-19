@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/js/jquery/jquery-2.2.3.min.js"></script>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .all {
+        width: 100%;
+        height:100%;
+        min-width: 1366px;
+    }
+    .left{
+        width:25%;
+        height:100%;
+        overflow: auto;
+        float:left;
+        padding:0px 15px 10px 10px;
+        box-sizing: border-box;
+        border-right:1px solid #999999;
+    }
+    .right{
+        width:74%;
+        height:100%;
+        float:right;
+    }
+    .common-title{
+        font-size:18px;
+        font-weight:600;
+        margin: 10px 0;
+    }
+    .common-content{
+        width:100%;
+        height:220px;
+        background:#F2F2F2;
+        margin:10px 0;
+        border-radius: 10px;
+        font-size:14px;
+    }
+    #main-title{
+        display: inline-block;
+        border-radius: 22px ;
+        background:#D6D6D6;
+        padding:5px 10px;
+        margin:20px 10px;
+    }
+    #subtitle{
+        display: block;
+        margin:20px 10px;
+    }
+    .weather{
+        padding-left: 10px;
+    }
+    .zongbao{
+        width:100%;
+        height:300px;
+        background:#F2F2F2;
+        border-radius: 10px;
+    }
+    .jianli{
+        width:100%;
+        height:250px;
+        background:#F2F2F2;
+        border-radius: 10px;
+    }
+    .zb1{
+        height:33%;
+        width:33%;
+        float:left;
+        border-right:1px solid #999999;
+        border-bottom: 1px solid #999999;
+    }
+    .zb1 img{
+        padding:10px 10px 0 10px;
+        max-width:100%;
+        height:60%;
+        width:80%;
+        text-align: center;
+    }
+    .zb1 p{
+        text-align: center;
+        font-size:14px;
+    }
+    .right_content{
+        height:100%;
+        margin:10px;
+        font-size:14px;
+    }
+    .top{
+        height:100px;
+        border-bottom: 1px solid #eeeeee;
+
+    }
+    .top_title{
+        width:100%;
+        height:28px;
+        border-radius: 15px;
+        text-align: center;
+        background:#D6D6D6;
+        line-height:28px;
+    }
+    .top_subtitle{
+        height:73px;
+        line-height:73px;
+        text-align: center;
+        float:left;
+    }
+    .top_weather{
+        float:right;
+        margin-right:50px;
+    }
+    .content{
+        width:100%;
+        height:800px;
+        border:1px solid pink;
+    }
+</style>
+<body>
+<div class="all">
+    <div class="left col-md-3 col-sm-3">
+        <div class="common-title">通用组件：</div>
+        <div class="common-content">
+            <span id="main-title">新华医院儿科综合楼施工管理周汇报--总包(2018.01.24-2018.01.30)</span>
+            <span id="subtitle">上周各项工作落实情况</span>
+            <div class="weather">天气情况:</div>
+        </div>
+        <div class="common-title">总包组件：</div>
+        <div class="zongbao">
+            <div class="zb1" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img src="/src/static/images/setting/zb1.png" alt="" class="img-responsive"  draggable="true" ondragstart="drag(event)" id="drag1"/>
+                <p>本周进度</p>
+            </div>
+            <div class="zb1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                <img src="/src/static/images/setting/zb1.png" alt="" class="img-responsive" draggable="true" ondragstart="drag(event)" id="drag2">
+                <p>本周安全文明</p>
+            </div>
+            <div class="zb1" style="border-right:none">
+                <img src="/src/static/images/setting/zb1.png" alt="" class="img-responsive" >
+                <p>本周质量技术</p>
+            </div>
+            <div class="zb1">
+                <img src="/src/static/images/setting/zb1.png" alt="" class="img-responsive" >
+                <p>施组方案</p>
+            </div>
+            <div class="zb1">
+                <img src="/src/static/images/setting/zb1.png" alt="" class="img-responsive" >
+                <p>现场资源</p>
+            </div>
+            <div class="zb1" style="border-right:none">
+                <img src="/src/static/images/setting/zb1.png" alt="" class="img-responsive" >
+                <p>下周计划</p>
+            </div>
+            <div class="zb1" style="border-bottom:none">
+                <img src="/src/static/images/setting/zb1.png" alt="" class="img-responsive" >
+                <p>协调事宜</p>
+            </div>
+            <div class="zb1" style="border-bottom:none">
+                <img src="/src/static/images/setting/zb1.png" alt="" class="img-responsive" >
+                <p>文本框</p>
+            </div>
+        </div>
+        <div class="common-title">监理组件：</div>
+        <div class="jianli">
+        </div>
+    </div>
+    <div class="right col-md-9 col-sm-9">
+        <div class="right_content">
+            <div class="top">
+                <div class="top_title">新华医院儿科综合楼施工管理周汇报--总包(2018.01.24-2018.01.30)</div>
+                <div>
+                    <div class="top_subtitle">上周各项工作落实情况</div>
+                    <div class="top_weather">
+                        <p>天气情况：</p>
+                        <p>2018.10.17 -2℃/5℃ 晴</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+function allowDrop(e) {
+    e.preventDefault();
+}
+function drag(e) {
+    e.dataTransfer.setData("Text",e.target.id);
+}
+function drop(e) {
+    e.preventDefault();
+    var data=e.dataTransfer.getData("Text");
+    e.target.appendChild(document.getElementById(data));
+}
+</script>
+</html>
